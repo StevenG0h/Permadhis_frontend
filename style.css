@@ -137,3 +137,19 @@ a{
     color: white;
     font-size: 14px;
 }
+.event-wrapper{
+    grid-column: 1/9;
+    height: 100vh;
+    overflow: hidden;
+}
+.event-image-carousel-wrapper{
+    width: 500%;
+}
+.event-image-carousel{
+    width: 20%;
+    overflow: hidden;
+}
+.event-image-carousel img{
+    width: 120%;
+    margin-left: -10%;
+}
