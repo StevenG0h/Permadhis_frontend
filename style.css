@@ -2,7 +2,7 @@ body{
     margin:0;
     padding:0;
     font-family: 'Reem Kufi', sans-serif;
-    font-size: 12px;
+    font-size: 0.5vw;
     background: #F7F3F3;
 }
 h1{
@@ -101,10 +101,36 @@ a{
     text-align: center;
     padding-left: 1rem;
 }
-.side-content-link{
+.side-content-footer{
     grid-column: 1/4;
     grid-row: 4/4;
     text-align: center;
+}
+.side-content-link{
+    grid-column: 1/4;
+    grid-row: 3/3;
+}
+.side-content-link-box{
+    width: 70%;
+    padding: 1vw;
+    padding-left: 0;
+    background-color: black;
+    float: left;
+    color: white;
+    text-align: center;
+    margin-left: 15%;
+    justify-content: center;
+    display: flex;
+}
+.side-content-link-box img{
+    width: 2vw;
+    float: left;
+    margin-right: 1vw;
+}
+.side-content-link-box h2{
+    float: left;
+    margin: 0;
+    padding: 0;
 }
 .about-wrapper{
     grid-column: 2/9;
@@ -132,6 +158,7 @@ a{
     padding-left: 0.5em;
     border-left: 0.3em solid white;
     margin-top: 2em;
+    vertical-align: middle;
 }
 .about-wrapper ol{
     color: white;
@@ -143,13 +170,17 @@ a{
     overflow: hidden;
 }
 .event-image-carousel-wrapper{
+    height: 100%;
     width: 500%;
 }
 .event-image-carousel{
     width: 20%;
+    height: 100%;
     overflow: hidden;
+    float: left;
 }
 .event-image-carousel img{
-    width: 120%;
-    margin-left: -10%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
 }
