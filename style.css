@@ -5,6 +5,7 @@ body{
     font-size: 0.5vw;
     background: #F7F3F3;
 }
+
 h1{
     margin: 0;
     padding: 0;
@@ -13,8 +14,10 @@ h1{
 h2{
     font-size: 2em;
 }
-p{
-    font-size: 14px;
+p, ol{
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 a{
     text-decoration: none;
@@ -46,7 +49,6 @@ a{
     grid-column: 9/12;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;   
-    column-gap: 0em;
     padding-top: 2rem;
     background-color: #F7F3F3;
     padding-bottom: 2em;
@@ -124,6 +126,7 @@ a{
 }
 .side-content-link-box img{
     width: 2vw;
+    height: 2vw;
     float: left;
     margin-right: 1vw;
 }
@@ -161,8 +164,9 @@ a{
     vertical-align: middle;
 }
 .about-wrapper ol{
+    width: 80%;
     color: white;
-    font-size: 14px;
+    font-size: 1.5em;
 }
 .event-wrapper{
     grid-column: 1/9;
@@ -183,4 +187,144 @@ a{
     width: 100%;
     height: 100%;
     object-fit: cover;    
+}
+
+@media screen and (max-width: 1440px) {
+    body{
+        font-size: 0.6vw;
+    }
+}
+@media screen and (max-width: 1024px) {
+    body{
+        font-size: 0.8vw;
+    }
+    .main-wrapper-img img{
+        padding-right: 3em;
+    }
+    .main-wrapper-title{
+        padding-left: 1em;
+    }
+    .side-content-link-box{
+        width: 90% !important;
+        margin-left: 5% !important;
+    }
+    .side-content-link-box img{
+        width: 3vw !important;
+        height: 3vw !important;
+    }
+    ol{
+        padding-left: 2vw;
+    }
+}   
+@media screen and (max-width:768px) {
+    body{
+        font-size: 1vw;
+    }
+    .nav-link-wrapper{
+        grid-column: 9/13 !important;
+    }
+    .side-content-title, .side-content-footer{
+        padding: 1vw !important;
+        grid-column: 1/5 !important;
+    }
+    .side-content-link{
+        grid-column: 1/5 !important;
+    }
+    .side-content-link-box{
+        padding: 3vw 0 3vw 0 !important;
+        width: 90% !important;
+        margin-left: 5% !important;
+    }
+
+}   
+@media screen and (max-width:600px) {
+    body{
+        font-size: 1.2vw;
+    }
+}
+@media screen and (max-width:425px){
+    body{
+        font-size: 2.5vw;
+    }
+    h2{
+        font-size: 3em !important;
+    }
+    .nav{
+        padding-left: 5vw;
+        grid-template-columns: 1fr 1fr !important;
+    }
+    .nav-home{
+        grid-column: 1/1 !important;
+    }
+    .nav-link-wrapper{
+        display: none !important;
+    }
+    .container{
+        grid-template-columns: 1fr 1fr !important;
+    }
+    .main{
+        height: auto !important;
+        grid-column: 1/3 !important;
+        min-height: 100vh !important;
+    }
+    .main-wrapper{
+        height: auto !important;
+        min-height: 100vh;
+        grid-template-columns: 1fr 1fr !important;
+    }
+    .main-wrapper-img, .main-wrapper-title{
+       display: none;
+    }
+    .mobile-main-wrapper{
+        grid-column: 1/3;
+        grid-row: 2/6;
+        text-align: center;
+        color: white;
+        
+    }
+    .mobile-main-wrapper h2{
+        width: 80%;
+        margin-left: 10%;
+    }
+    .mobile-main-wrapper img{
+        width: 20%;
+    }
+    .mobile-main-wrapper p{
+        font-family: 'reem kufi', sans-serif;
+    }
+    .mobile-main-wrapper p:nth-child(4){
+        margin-top: 25vw;
+    }
+    .main-wrapper img{
+        border: none !important;
+        grid-column: 1/3 !important;
+    }
+    .side-content{
+        display: none !important;
+    }
+    .about-wrapper{
+        grid-column: 1/3 !important;
+        grid-row: 1/6 !important;
+        margin-top: 25vw !important;
+        padding: 0 5vw 0 5vw;
+    }
+    .about-title-wrapper{
+        grid-column: 1/3 !important;
+        display: block !important;
+        text-align: center;
+    }
+    .about-title-img img{
+        width: 10em !important;
+        margin: 3vw !important;
+        padding: 0 !important;
+    }
+    .about-wrapper h2{
+        text-align: center;
+        border:none !important;
+        padding:0 !important;
+        width: 100%;
+    }
+    .about-p{
+        width: 100% !important;
+    }
 }
