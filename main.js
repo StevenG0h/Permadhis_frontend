@@ -6,9 +6,11 @@ function navLinkActive(target) {
     nav[target].classList.add("active");
     
 }
+
 function detectSection() {
     var about = document.getElementById("about");
     var event = document.getElementById("event");
+    var home = document.getElementById("home");
     if(event.offsetTop <= window.pageYOffset){
         navLinkActive(2);
     }else if(about.offsetTop <= window.pageYOffset){
