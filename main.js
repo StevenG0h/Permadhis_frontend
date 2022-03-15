@@ -21,7 +21,7 @@ function detectSection() {
 function ezScroll(){
     var viewportheight = window.innerHeight;
     var top = 0;
-    var scr = window.scrollX;
+    var scr = window.scrollY;
     if(scr > top){
         window.scrollTo(0,viewportheight);
         top = scr;
