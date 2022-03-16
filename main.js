@@ -18,13 +18,19 @@ function detectSection() {
         navLinkActive(0);
     }
 }
+
+var topY = 0;
+var viewportheight = window.innerHeight;
 function ezScroll(){
-    var viewportheight = window.innerHeight;
-    var top = 0;
+    
     var scr = window.scrollY;
-    if(scr > top){
+    
+    if(scr > topY){
         window.scrollTo(0,viewportheight);
-        top = scr;
+        topY = viewportheight;
         viewportheight = viewportheight + viewportheight;
+        alert(viewportheight);
+    }else if(scr < topY){
+        
     }
 }
