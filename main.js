@@ -20,10 +20,13 @@ function detectSection() {
 }
 var viewport = window.innerHeight;
 var page = document.getElementsByClassName('event-main');
+var side = document.getElementsByClassName('event-side-content');
 page[0].style.opacity = '1';
 function revealPage() {
     
     var pageNum = Math.floor(window.scrollY / viewport);
     var reveal = (window.scrollY / viewport) - pageNum ;
-    page[pageNum-1].style.opacity = ''+ reveal +''
+    page[pageNum-1].style.opacity = ''+ reveal +'';
+
+
 }
