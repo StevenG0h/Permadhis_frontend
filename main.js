@@ -1,4 +1,4 @@
-setInterval(ezScroll,100);  
+
 function navLinkActive(target) {
     var nav = document.getElementsByClassName("nav-link");
     for (let index = 0; index < nav.length; index++) {
@@ -19,18 +19,10 @@ function detectSection() {
     }
 }
 
-var topY = 0;
-var viewportheight = window.innerHeight;
-function ezScroll(){
-    
-    var scr = window.scrollY;
-    
-    if(scr > topY){
-        window.scrollTo(0,viewportheight);
-        topY = viewportheight;
-        viewportheight = viewportheight + viewportheight;
-        alert(viewportheight);
-    }else if(scr < topY){
-        
-    }
+var viewport = window.innerHeight;
+var page = document.getElementsByClassName('event-main');
+function revealPage() {
+    var pageNum = Math.floor(window.scrollY / viewport);
+    var reveal = (window.scrollY / viewport) - pageNum ;
+    page[pageNum-1].style.opacity = ''+ reveal +'';
 }
