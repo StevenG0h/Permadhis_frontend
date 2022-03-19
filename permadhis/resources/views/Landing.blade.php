@@ -111,7 +111,7 @@
             <div class="event-main-wrapper">
                 <div class="event-wrapper">
                     <div class="event-image-carousel-button-wrapper">
-                        <button onclick="carousel(0,0)" class="event-image-carousel-button"></button>
+                        <button onclick="carousel(0,0)" class="event-image-carousel-button button-active"></button>
                         <button onclick="carousel(1,0)" class="event-image-carousel-button"></button>
                         <button onclick="carousel(2,0)" class="event-image-carousel-button"></button>
                         <button onclick="carousel(3,0)" class="event-image-carousel-button"></button>
@@ -150,5 +150,5 @@
     
 </body>
 </html>
-<script src="{{ asset('main.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 @endSection
