@@ -1,41 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body onscroll="detectSection(); revealPage()">
-    <div class="nav">
-        <a href="" class="nav-home">
-            Permadhis
-        </a>
-        <div class="nav-link-wrapper">
-            <a href="#home" class="nav-link active">Beranda</a>
-            <a href="#about" class="nav-link">Tentang</a>
-            <a href="#event" class="nav-link">Event</a>
-        </div>
-    </div>
+@extends('landingNav.landingNav')
+@section('content')
     <div class="container">
-        <div class="main" id="home" style="background-image: url(assets/IMG_9616.JPG);">
+        <div class="main" id="home" style="background-image: url({{ asset('image/IMG_9616.JPG') }});">
             <div class="main-wrapper">
                  <div class="main-wrapper-img">
-                     <img src="assets/LogoPmd.png" alt="">
+                     <img src="{{ asset('image/LogoPmd.png') }}" alt="">
                  </div>
                  <div class="main-wrapper-title">
                     <h2>Persaudaraan Mahasiswa Buddhis <br> Politeknik Caltex Riau</h2>
                  </div>
                  <div class="mobile-main-wrapper">
                      <h2>Selamat Datang di <br> Website Kami</h2>
-                     <img src="assets/LogoPmd.png" alt="">
+                     <img src="{{ asset('image/LogoPmd.png') }}" alt="">
                      <p>Persaudaraan Mahasiswa Buddhis <br> Politeknik Caltex Riau</p>
                     <p>Ingin tahu tentang kami?</p>
                     <a href="#about">
@@ -68,12 +44,12 @@
             </div>
         </div>
         
-        <div class="main" id="about" style="background-image: url(assets/IMG_9616.JPG);">
+        <div class="main" id="about" style="background-image: url({{ asset('image/IMG_9616.JPG') }});">
             <div class="main-wrapper">
                 <div class="about-wrapper">
                     <div class="about-title-wrapper">
                         <div class="about-title-img">
-                            <img src="assets/LogoPmd.png" alt="">
+                            <img src="{{ asset('image/LogoPmd.png') }}" alt="">
                         </div>
                         <h1>Apa itu Permadhis</h1>
                     </div>
@@ -91,7 +67,7 @@
                     <div class="side-content-link">
                         <h2>Kunjungi sosial media kami</h2>
                         <a class="side-content-link-box" href="https://www.instagram.com/permadhispcr/">
-                            <img src="assets/instagram.png" alt="instagram">
+                            <img src="{{ asset('image/instagram.png') }}" alt="instagram">
                             <h2>@permadhispcr</h2>
                         </a>
                         <a href="#event">
@@ -115,7 +91,7 @@
             <div class="side-content-link">
                 <h2>Kunjungi sosial media kami</h2>
                 <a class="side-content-link-box" href="https://www.instagram.com/permadhispcr/">
-                    <img src="assets/instagram.png" alt="instagram">
+                    <img src="{{ asset('image/instagram.png') }}" alt="instagram">
                     <h2>@permadhispcr</h2>
                 </a>
             </div>
@@ -130,7 +106,8 @@
                 </a>
             </div>
         </div>
-        <div class="event-main" id="event">
+        
+<div class="event-main" id="event">
             <div class="event-main-wrapper">
                 <div class="event-wrapper">
                     <div class="event-image-carousel-button-wrapper">
@@ -142,11 +119,11 @@
                     </div>
                     <div class="event-image-carousel-wrapper">            
                         <div class="event-image-carousel">
-                            <img src="assets/DSC04989.JPG" alt="" srcset="">
-                            <img src="assets/DSC04994.JPG" alt="" srcset="">
-                            <img src="assets/DSC04999.JPG" alt="" srcset="">
-                            <img src="assets/DSC05027.JPG" alt="" srcset="">
-                            <img src="assets/DSC05029.JPG" alt="" srcset="">
+                            <img src="{{ asset('image/DSC04989.JPG') }}" alt="" srcset="">
+                            <img src="{{ asset('image/DSC04994.JPG') }}" alt="" srcset="">
+                            <img src="{{ asset('image/DSC04999.JPG') }}" alt="" srcset="">
+                            <img src="{{ asset('image/DSC05027.JPG') }}" alt="" srcset="">
+                            <img src="{{ asset('image/DSC05029.JPG') }}" alt="" srcset="">
                         </div>
                     </div>
                 </div>
@@ -154,14 +131,14 @@
         </div>
         <div class="event-side-content">
             <div class="side-content-title">
-                <img src="assets/Metta_2022_Logo (1).png" alt="">
+                <img src="{{ asset('image/Metta_2022_Logo (1).png') }}" alt="">
                 <h2>
                     Event donor darah dan lomba untuk anak muda
                 </h2>
             </div>
             <div class="side-content-link">
                 <a class="side-content-link-box" href="https://www.instagram.com/mettapermadhis/">
-                    <img src="assets/instagram.png" alt="instagram">
+                    <img src="{{ asset('image/instagram.png') }}" alt="instagram">
                     <h2>@mettapermadhis</h2>
                 </a>
             </div>
@@ -170,6 +147,8 @@
             </div>
         </div>
     </div>
+    
 </body>
 </html>
-<script src="main.js"></script>
+<script src="{{ asset('main.js') }}"></script>
+@endSection
