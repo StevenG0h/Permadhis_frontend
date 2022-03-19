@@ -40,21 +40,27 @@ function revealPage() {
 
 
 var carouselWrapper = document.querySelectorAll('.event-image-carousel-wrapper');
+var carouselButton = document.querySelectorAll('.event-image-carousel-button-wrapper');
 var carouselIndex = [];
+var carouselButtonIndex = [];
 for (let i = 0; i < carouselWrapper.length; i++) {
     carouselIndex[i] = 0;
+    carouselButtonIndex[i] = 0;
 }
 function carousel(index,carousel) {
     carouselWrapper[carousel].style.transform = "translateX("+index*-20+"%)";
+    carouselButton[carousel].children[carouselButtonIndex[carousel]].classList.remove('button-active');
     carouselIndex[carousel] = index;
+    carouselButtonIndex[carousel] = carouselIndex[carousel];
+    carouselButton[carousel].children[carouselButtonIndex[carousel]].classList.add('button-active');
 }
 function nextCarousel(){
-    for (let index = 0; index < carouselIndex.length; index++) {
-        let carousel = carouselIndex[index];
+    for (let i = 0; i < carouselIndex.length; i++) {
+        let carousel = carouselIndex[i];
         if(carousel == 4){
             carousel =-1;
         }
-        this.carousel(carousel+1,index);
+        this.carousel(carousel+1,i);
         
     }   
 }
