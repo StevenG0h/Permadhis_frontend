@@ -58,4 +58,4 @@ function nextCarousel(){
         
     }   
 }
-set
+setInterval(nextCarousel,4000);
