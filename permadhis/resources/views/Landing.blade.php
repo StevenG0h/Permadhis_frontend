@@ -106,8 +106,8 @@
                 </a>
             </div>
         </div>
-        
-<div class="event-main" id="event">
+        @foreach($data as $event)      
+        <div class="event-main" id="event">
             <div class="event-main-wrapper">
                 <div class="event-wrapper">
                     <div class="event-image-carousel-button-wrapper">
@@ -119,11 +119,9 @@
                     </div>
                     <div class="event-image-carousel-wrapper">            
                         <div class="event-image-carousel">
-                            <img src="{{ asset('image/DSC04989.JPG') }}" alt="" srcset="">
-                            <img src="{{ asset('image/DSC04994.JPG') }}" alt="" srcset="">
-                            <img src="{{ asset('image/DSC04999.JPG') }}" alt="" srcset="">
-                            <img src="{{ asset('image/DSC05027.JPG') }}" alt="" srcset="">
-                            <img src="{{ asset('image/DSC05029.JPG') }}" alt="" srcset="">
+                            @foreach($event['image'] as $image)
+                            <img src="{{ asset('storage/'.$image) }}" alt="" srcset="">
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -133,19 +131,20 @@
             <div class="side-content-title">
                 <img src="{{ asset('image/Metta_2022_Logo (1).png') }}" alt="">
                 <h2>
-                    Event donor darah dan lomba untuk anak muda
+                    {{ $event['description'] }}
                 </h2>
             </div>
             <div class="side-content-link">
-                <a class="side-content-link-box" href="https://www.instagram.com/mettapermadhis/">
+                <a class="side-content-link-box" href="{{ $event['instagram'] }}">
                     <img src="{{ asset('image/instagram.png') }}" alt="instagram">
-                    <h2>@mettapermadhis</h2>
+                    <h2>@ {{ $event['title'] }}</h2>
                 </a>
             </div>
             <div class="side-content-footer">
                 <h2>Permadhis Cup</h2>
             </div>
         </div>
+        @endforeach
     </div>
     
 </body>

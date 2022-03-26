@@ -18,6 +18,10 @@ Route::get('/', function(){
 
 Route::middleware('auth')->group(function(){
     Route::get('/admin',[App\Http\Controllers\AdminController::class,'index'])->name('adminHome');
+    Route::get('/add',[App\Http\Controllers\adminAdd::class,'index'])->name('add');
+    Route::post('/addProcess',[App\Http\Controllers\adminAdd::class,'addProcess'])->name('addProcess');
+    Route::get('/update',[App\Http\Controllers\adminUpdate::class,'index'])->name('update');
+    Route::get('/delete',[ App\Http\Controllers\adminDelete::class,'index'])->name('delete');
 });
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\LandingController::class, 'index'])->name('home');

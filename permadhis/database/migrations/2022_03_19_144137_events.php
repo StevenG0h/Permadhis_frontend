@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
             $table->string('title');
             $table->string('description');
