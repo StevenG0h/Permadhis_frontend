@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\events;
 
+use function PHPUnit\Framework\isNull;
+
 class adminAdd extends Controller
 {
     protected function index(){
@@ -19,6 +21,9 @@ class adminAdd extends Controller
         $logo = $request->file('logo');
         $images = $request->file('image');
         $title_db = $admin::where('title',$title)->first('title');
+        if($title_db == null){
+            $title_db['title'] = '';
+        }
         if ($title != $title_db['title']) {
             if (!empty($title)) {
                 if (!empty($desc)) {
@@ -31,7 +36,7 @@ class adminAdd extends Controller
                         foreach ($images as $image) {
                             $image->storeAs($title.'/images/', $image->getClientOriginalName());
                         }
-                        return redirect('adminHome');
+                        return redirect('/admin');
                     }
                 }
             }
