@@ -106,16 +106,17 @@
                 </a>
             </div>
         </div>
+        <?php $i = 0;  ?>
         @foreach($data as $event)      
         <div class="event-main" id="event">
             <div class="event-main-wrapper">
                 <div class="event-wrapper">
                     <div class="event-image-carousel-button-wrapper">
-                        <button onclick="carousel(0,0)" class="event-image-carousel-button button-active"></button>
-                        <button onclick="carousel(1,0)" class="event-image-carousel-button"></button>
-                        <button onclick="carousel(2,0)" class="event-image-carousel-button"></button>
-                        <button onclick="carousel(3,0)" class="event-image-carousel-button"></button>
-                        <button onclick="carousel(4,0)" class="event-image-carousel-button"></button>
+                        <button onclick="carousel(0,{{ $i }})" class="event-image-carousel-button button-active"></button>
+                        <button onclick="carousel(1,{{ $i }})" class="event-image-carousel-button"></button>
+                        <button onclick="carousel(2,{{ $i }})" class="event-image-carousel-button"></button>
+                        <button onclick="carousel(3,{{ $i }})" class="event-image-carousel-button"></button>
+                        <button onclick="carousel(4,{{ $i }})" class="event-image-carousel-button"></button>
                     </div>
                     <div class="event-image-carousel-wrapper">            
                         <div class="event-image-carousel">
@@ -144,6 +145,7 @@
                 <h2>Permadhis Cup</h2>
             </div>
         </div>
+        <?php $i++; ?>
         @endforeach
     </div>
     
