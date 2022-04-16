@@ -13,7 +13,7 @@ class LandingController extends Controller
         $events = $this->showEvents();
         $i = 0;
         foreach ($events as $event) {
-            $image[$i] = $this->getImage($event['title']);
+            $image[$i] = $this->getImage($event['title']."/images");
             $event['image'] = $image[$i];
             $i++;
         }

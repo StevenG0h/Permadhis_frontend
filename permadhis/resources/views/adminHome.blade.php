@@ -19,6 +19,7 @@
                 <th>Created at</th>
                 <th>Updated at</th>
                 <th>Update</th>
+                <th>Archieve</th>
             </tr>
             @foreach($data as $event)
             <tr>
@@ -28,11 +29,8 @@
                 <td>{{ $event['instagram'] }}</td>
                 <td>{{ $event['created_at'] }}</td>
                 <td>{{ $event['updated_at'] }}</td>
-<<<<<<< HEAD
-                <td><a href="/update/{{ $event['id'] }}">Update</a></td>
-=======
                 <td><a href="{{ route("update",$event['id']) }}">update</a></td>
->>>>>>> 980cc363eb9f728ba62dc00c74f02773196be6fc
+                <td><a href="{{ route("archieve",$event['id']) }}">archieve</a></td>
             </tr>
             @endforeach
         </table>

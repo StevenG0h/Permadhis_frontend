@@ -21,11 +21,12 @@ Route::middleware('auth')->group(function(){
     Route::get('/add',[App\Http\Controllers\adminAdd::class,'index'])->name('add');
     Route::post('/addProcess',[App\Http\Controllers\adminAdd::class,'addProcess'])->name('addProcess');
     Route::get('/update/{id}',[App\Http\Controllers\adminUpdate::class,'index'])->name('update');
-<<<<<<< HEAD
-=======
     Route::post('/updateImage/{id}',[App\Http\Controllers\adminUpdate::class,'updateImage'])->name('updateImage');
->>>>>>> 980cc363eb9f728ba62dc00c74f02773196be6fc
-    Route::get('/delete',[ App\Http\Controllers\adminDelete::class,'index'])->name('delete');
+    Route::post('/updateEvent/{id}',[App\Http\Controllers\adminUpdate::class,'updateEvent'])->name('updateEvent');
+    Route::post('/updateLogo/{title}',[App\Http\Controllers\adminUpdate::class,'updateLogo'])->name('updateLogo');
+    Route::post('/uploadImage/{title}',[App\Http\Controllers\adminUpdate::class,'uploadImage'])->name('uploadImage');
+    Route::get('/archieve/{id}',[ App\Http\Controllers\adminDelete::class,'archieve'])->name('archieve');
+    Route::get('/delete/{id}',[ App\Http\Controllers\adminDelete::class,'index'])->name('delete');
 });
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\LandingController::class, 'index'])->name('home');
