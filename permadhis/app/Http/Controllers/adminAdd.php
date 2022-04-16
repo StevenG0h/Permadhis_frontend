@@ -21,8 +21,13 @@ class adminAdd extends Controller
         $logo = $request->file('logo');
         $images = $request->file('image');
         $title_db = $admin::where('title',$title)->first('title');
+<<<<<<< HEAD
         if($title_db == null){
             $title_db['title'] = '';
+=======
+        if(isNull($title_db)){
+            $title_db['title'] = 'null';
+>>>>>>> 980cc363eb9f728ba62dc00c74f02773196be6fc
         }
         if ($title != $title_db['title']) {
             if (!empty($title)) {

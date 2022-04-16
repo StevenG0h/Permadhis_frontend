@@ -28,7 +28,11 @@
                 <td>{{ $event['instagram'] }}</td>
                 <td>{{ $event['created_at'] }}</td>
                 <td>{{ $event['updated_at'] }}</td>
+<<<<<<< HEAD
                 <td><a href="/update/{{ $event['id'] }}">Update</a></td>
+=======
+                <td><a href="{{ route("update",$event['id']) }}">update</a></td>
+>>>>>>> 980cc363eb9f728ba62dc00c74f02773196be6fc
             </tr>
             @endforeach
         </table>
