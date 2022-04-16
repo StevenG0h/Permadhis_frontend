@@ -130,7 +130,7 @@
         </div>
         <div class="event-side-content">
             <div class="side-content-title">
-                <img src="{{ asset('image/Metta_2022_Logo (1).png') }}" alt="">
+                <img src="{{ asset('storage/'.$event['logo'][0]) }}" alt="">
                 <h2>
                     {{ $event['description'] }}
                 </h2>

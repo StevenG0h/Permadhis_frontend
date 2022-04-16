@@ -25,7 +25,6 @@ Route::middleware('auth')->group(function(){
     Route::post('/updateEvent/{id}',[App\Http\Controllers\adminUpdate::class,'updateEvent'])->name('updateEvent');
     Route::post('/updateLogo/{title}',[App\Http\Controllers\adminUpdate::class,'updateLogo'])->name('updateLogo');
     Route::post('/uploadImage/{title}',[App\Http\Controllers\adminUpdate::class,'uploadImage'])->name('uploadImage');
-    Route::get('/archieve/{id}',[ App\Http\Controllers\adminDelete::class,'archieve'])->name('archieve');
     Route::get('/delete/{id}',[ App\Http\Controllers\adminDelete::class,'index'])->name('delete');
 });
 Auth::routes();

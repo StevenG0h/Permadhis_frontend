@@ -4,17 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\events;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class adminDelete extends Controller
 {
-    public function index(){
-        echo 'hello';
-    }
-    public function permDelete(){
-        return view('adminDelete');
-    }
-    public function archieve($id){
+    public function index($id){
         $event = new events;
-        $event::withTrashed()->where('id',$id);
+        $event = $event::find($id);
+        $title = $event->title;
+        Storage::deleteDirectory($title);
+        $event->delete();
+        return back();
     }
 }

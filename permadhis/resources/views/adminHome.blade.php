@@ -19,7 +19,7 @@
                 <th>Created at</th>
                 <th>Updated at</th>
                 <th>Update</th>
-                <th>Archieve</th>
+                <th>Delete</th>
             </tr>
             @foreach($data as $event)
             <tr>
@@ -30,7 +30,11 @@
                 <td>{{ $event['created_at'] }}</td>
                 <td>{{ $event['updated_at'] }}</td>
                 <td><a href="{{ route("update",$event['id']) }}">update</a></td>
-                <td><a href="{{ route("archieve",$event['id']) }}">archieve</a></td>
+                <td>
+                    <a href="{{ route("delete",$event['id']) }}">
+                        delete
+                    </a>
+                </td>
             </tr>
             @endforeach
         </table>

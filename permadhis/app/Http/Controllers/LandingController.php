@@ -14,7 +14,9 @@ class LandingController extends Controller
         $i = 0;
         foreach ($events as $event) {
             $image[$i] = $this->getImage($event['title']."/images");
+            $logo[$i] = $this->getImage($event['title']."/logo"); 
             $event['image'] = $image[$i];
+            $event['logo'] = $logo[$i];
             $i++;
         }
         return view('Landing')->with('data',$events);   
