@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 Route::get('/', function(){
     return redirect('home');
 });
@@ -27,5 +27,5 @@ Route::middleware('auth')->group(function(){
     Route::post('/uploadImage/{title}',[App\Http\Controllers\adminUpdate::class,'uploadImage'])->name('uploadImage');
     Route::get('/delete/{id}',[ App\Http\Controllers\adminDelete::class,'index'])->name('delete');
 });
-Auth::routes();
+
 Route::get('/home', [App\Http\Controllers\LandingController::class, 'index'])->name('home');

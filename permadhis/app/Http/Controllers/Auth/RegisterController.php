@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
+use PhpParser\Node\Stmt\Echo_;
 
 class RegisterController extends Controller
 {
@@ -36,11 +39,15 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
-        $this->middleware('guest');
+        //$this->middleware('guest');
+        //$this->isAdmin($request);
     }
 
+    protected function isAdmin(Request $request){
+        
+    }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -68,6 +75,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'status' => 0
         ]);
     }
 }

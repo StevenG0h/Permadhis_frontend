@@ -11,6 +11,10 @@
     <a href="/add">Add</a>
     <a href="/update">Update</a>
     <a href="/delete">Delete</a>
+    <form action="/logout" method="post">
+        @csrf
+        <input type="submit" value="logout">
+    </form>
     @yield('admin')
 </body>
 </html>
