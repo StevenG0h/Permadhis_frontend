@@ -10,7 +10,9 @@
     @extends('adminNav.adminNav')
     @section('admin')
         <h1>hello</h1>
+        
         <table>
+            <a href="{{ route("add") }}">Add</a>
             <tr>
                 <th>id</th>
                 <th>Title</th>

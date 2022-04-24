@@ -7,14 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/admin">Dashboard</a>
-    <a href="/add">Add</a>
-    <a href="/update">Update</a>
-    <a href="/delete">Delete</a>
+    <a href="{{ route("adminHome") }}">Dashboard</a>
+
+    <a href="{{ route("showUser") }}">User</a>
     <form action="/logout" method="post">
         @csrf
-        <input type="submit" value="logout">
+        <button type="submit" onclick="return confirm('yakin mau logout?')" value="logout"> logout </button>
     </form>
+    <a href="{{ route("updateUser") }}">update</a>
     @yield('admin')
 </body>
 </html>

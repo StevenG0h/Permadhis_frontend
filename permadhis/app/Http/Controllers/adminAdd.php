@@ -11,6 +11,7 @@ use function PHPUnit\Framework\isNull;
 class adminAdd extends Controller
 {
     protected function index(){
+        
         return view('adminAdd');
     }
     protected function addProcess(Request $request){

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -11,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
+Auth::routes([
+    'register' => false
+]);
 Route::get('/', function(){
     return redirect('home');
 });
@@ -26,6 +29,12 @@ Route::middleware('auth')->group(function(){
     Route::post('/updateLogo/{title}',[App\Http\Controllers\adminUpdate::class,'updateLogo'])->name('updateLogo');
     Route::post('/uploadImage/{title}',[App\Http\Controllers\adminUpdate::class,'uploadImage'])->name('uploadImage');
     Route::get('/delete/{id}',[ App\Http\Controllers\adminDelete::class,'index'])->name('delete');
+    Route::get('/register',[App\Http\Controllers\RegisterController::class,'index'])->name('registerForm');
+    Route::post('/registerProcess',[App\Http\Controllers\Auth\RegisterController::class,'register'])->name('register');
+    Route::get('/users',[App\Http\Controllers\UserController::class,'index'])->name('showUser');
+    Route::get('/updateUser/',[App\Http\Controllers\UserController::class,'updateUser'])->name('updateUser');
+    Route::post('/updateUserProcess/',[App\Http\Controllers\UserController::class,'updateUserProcess'])->name('updateUserProcess');
+    Route::post('/deleteUser/{id}',[App\Http\Controllers\UserController::class,'deleteUser'])->name('deleteUser');
 });
 
 Route::get('/home', [App\Http\Controllers\LandingController::class, 'index'])->name('home');
