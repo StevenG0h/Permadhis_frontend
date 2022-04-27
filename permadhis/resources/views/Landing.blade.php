@@ -107,7 +107,7 @@
             </div>
         </div>
         <?php $i = 0;  ?>
-        @foreach($data as $event)      
+        @for($j =0; $j<count($data);$j++)      
         <div class="event-main" id="event">
             <div class="event-main-wrapper">
                 <div class="event-wrapper">
@@ -120,7 +120,7 @@
                     </div>
                     <div class="event-image-carousel-wrapper">            
                         <div class="event-image-carousel">
-                            @foreach($event['image'] as $image)
+                            @foreach($data[$j]['image'] as $image)
                             <img src="{{ asset('storage/'.$image) }}" alt="" srcset="">
                             @endforeach
                         </div>
@@ -130,23 +130,27 @@
         </div>
         <div class="event-side-content">
             <div class="side-content-title">
-                <img src="{{ asset('storage/'.$event['logo'][0]) }}" alt="">
+                <img src="{{ asset('storage/'.$data[$j]['logo'][0]) }}" alt="">
                 <h2>
-                    {{ $event['description'] }}
+                    {{ $data[$j]['description'] }}
                 </h2>
             </div>
             <div class="side-content-link">
-                <a class="side-content-link-box" href="{{ $event['instagram'] }}">
+                <a class="side-content-link-box" href="{{ $data[$j]['instagram'] }}">
                     <img src="{{ asset('image/instagram.png') }}" alt="instagram">
-                    <h2>@ {{ $event['title'] }}</h2>
+                    <h2>@ {{ $data[$j]['title'] }}</h2>
                 </a>
             </div>
             <div class="side-content-footer">
-                <h2>Permadhis Cup</h2>
+                @if($j+1 < count($data))
+                <h2>{{ 
+                    $data[$j+1]['title'] 
+                }}</h2>
+                @endif
             </div>
         </div>
         <?php $i++; ?>
-        @endforeach
+        @endfor
     </div>
     
 </body>

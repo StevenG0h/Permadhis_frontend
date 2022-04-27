@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/users',[App\Http\Controllers\UserController::class,'index'])->name('showUser');
     Route::get('/updateUser/',[App\Http\Controllers\UserController::class,'updateUser'])->name('updateUser');
     Route::post('/updateUserProcess/',[App\Http\Controllers\UserController::class,'updateUserProcess'])->name('updateUserProcess');
+    Route::post('/updateUserPassword/',[App\Http\Controllers\UserController::class,'updateUserPassword'])->name('updateUserPassword');
     Route::post('/deleteUser/{id}',[App\Http\Controllers\UserController::class,'deleteUser'])->name('deleteUser');
 });
 

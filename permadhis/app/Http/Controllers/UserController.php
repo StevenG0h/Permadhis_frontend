@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -37,9 +38,26 @@ class UserController extends Controller
         $user->save();
         return redirect(route('adminHome'));
     }
-    private function showUserData($id){
-        $user = new User;
-        return $user->get()->where('id',$id);
+    public function updateUserPassword(Request $request){
+        $this->validator($request->all())->validate();
+
+        $user = $this->create($request->all());
+
+        $this->guard()->login($user);
+
+        if ($response = $this->registered($request, $user)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+                    ? new JsonResponse([], 201)
+                    : redirect($this->redirectPath());
+    }
+    protected function validator(array $data){
+        return Validator::make($data,[
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'cnpassword' => ['required', 'string', 'min:8', 'confirmed']
+        ]);
     }
     public function deleteUser($id){
         $user = DB::table('users')->where('id',$id);
