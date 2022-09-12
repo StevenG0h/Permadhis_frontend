@@ -43,10 +43,10 @@ class adminAdd extends Controller
             'instagram_username'=>$request->ig_username,
         ]);
 
-        $request->file('logo')->storeAs($request->title.'/logo/', $request->file('logo')->getClientOriginalName());
+        $request->file('logo')->storeAs($request->title.'/logo/', $request->file('logo')->getClientOriginalName(),'image');
         
         foreach ($request->file('image') as $image) {
-            $image->storeAs($request->title.'/images/', $image->getClientOriginalName());
+            $image->storeAs($request->title.'/images/', $image->getClientOriginalName(),'image');
         }
         return redirect('admin');
     }

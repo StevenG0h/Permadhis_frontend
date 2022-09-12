@@ -19,9 +19,8 @@
                         <th>Id</th>
                         <th>Title</th>
                         <th>Desc</th>
-                        <th>Instagram</th>
-                        <th>Created at</th>
-                        <th>Updated at</th>
+                        <th>Instagram link</th>
+                        <th>Instagram username</th>
                         <th>Update</th>
                         <th>Delete</th>
                     </tr>
@@ -30,9 +29,8 @@
                         <td>{{ $event['id'] }}</td>
                         <td>{{ $event['title'] }}</td>
                         <td>{{ $event['description'] }}</td>
-                        <td>{{ $event['instagram'] }}</td>
-                        <td>{{ $event['created_at'] }}</td>
-                        <td>{{ $event['updated_at'] }}</td>
+                        <td>{{ $event['instagram_link'] }}</td>
+                        <td>{{ $event['instagram_username'] }}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route("update",$event['id']) }}">
                                 Update

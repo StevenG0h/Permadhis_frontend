@@ -10,9 +10,9 @@ function navLinkActive(target) {
 function detectSection() {
     var about = document.getElementById("about");
     var event = document.getElementById("event");
-    if(event.offsetTop <= window.pageYOffset){
+    if(event.offsetTop - 20 <= window.pageYOffset){
         navLinkActive(2);
-    }else if(about.offsetTop <= window.pageYOffset){
+    }else if(about.offsetTop -20 <= window.pageYOffset){
         navLinkActive(1);
     }else{
         navLinkActive(0);

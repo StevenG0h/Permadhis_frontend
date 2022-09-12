@@ -26,6 +26,6 @@ class LandingController extends Controller
         return $events = $eventObj->get();
     }
     private function getImage($path){
-        return $image = Storage::allFiles($path);
+        return $image = Storage::disk('image')->allFiles($path);
     }
 }

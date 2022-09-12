@@ -19,7 +19,7 @@ Route::get('/', function(){
     return redirect('home');
 });
 
-
+Route::middleware(['auth'])->group(function () {
     Route::get('/admin',[App\Http\Controllers\AdminController::class,'index'])->name('adminHome');
     Route::get('/add',[App\Http\Controllers\adminAdd::class,'index'])->name('add');
     Route::post('/addProcess',[App\Http\Controllers\adminAdd::class,'addProcess'])->name('addProcess');
@@ -36,6 +36,8 @@ Route::get('/', function(){
     Route::post('/updateUserProcess/',[App\Http\Controllers\UserController::class,'updateUserProcess'])->name('updateUserProcess');
     Route::post('/updateUserPassword/',[App\Http\Controllers\UserController::class,'updateUserPassword'])->name('updateUserPassword');
     Route::post('/deleteUser/{id}',[App\Http\Controllers\UserController::class,'deleteUser'])->name('deleteUser');
+});
+    
 
 
 Route::get('/home', [App\Http\Controllers\LandingController::class, 'index'])->name('home');

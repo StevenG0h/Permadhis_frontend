@@ -121,7 +121,7 @@
                     <div class="event-image-carousel-wrapper">            
                         <div class="event-image-carousel">
                             @foreach($data[$j]['image'] as $image)
-                            <img src="{{ asset('storage/'.$image) }}" alt="" srcset="">
+                            <img src="{{ asset('event/'.$image) }}" alt="" srcset="">
                             @endforeach
                         </div>
                     </div>
@@ -130,7 +130,7 @@
         </div>
         <div class="event-side-content">
             <div class="side-content-title">
-                <img src="{{ asset('storage/'.$data[$j]->logo[0]) }}" alt="">
+                <img src="{{ asset('event/'.$data[$j]->logo[0]) }}" alt="">
                 <h2>
                     {{ $data[$j]['description'] }}
                 </h2>
