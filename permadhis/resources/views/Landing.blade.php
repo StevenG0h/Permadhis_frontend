@@ -130,15 +130,15 @@
         </div>
         <div class="event-side-content">
             <div class="side-content-title">
-                <img src="{{ asset('storage/'.$data[$j]['logo'][0]) }}" alt="">
+                <img src="{{ asset('storage/'.$data[$j]->logo[0]) }}" alt="">
                 <h2>
                     {{ $data[$j]['description'] }}
                 </h2>
             </div>
             <div class="side-content-link">
-                <a class="side-content-link-box" href="{{ $data[$j]['instagram'] }}">
+                <a class="side-content-link-box" href="{{ $data[$j]['instagram_link'] }}">
                     <img src="{{ asset('image/instagram.png') }}" alt="instagram">
-                    <h2>@ {{ $data[$j]['title'] }}</h2>
+                    <h2>@ {{ $data[$j]['instagram_username'] }}</h2>
                 </a>
             </div>
             <div class="side-content-footer">

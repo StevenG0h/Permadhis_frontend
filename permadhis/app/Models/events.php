@@ -10,7 +10,5 @@ class events extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $fillable = [
-        'title','description','instagram'
-    ];
+    protected $guarded = [];
 }

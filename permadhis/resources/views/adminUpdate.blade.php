@@ -15,13 +15,14 @@
             <div class="m-3 p-3 col-6 card">
                 <form action="../updateEvent/{{ $event['id'] }}" method="post" enctype="multipart/form-data">
                     @csrf 
-                    <h2>Title</h2>
-                    <input class="form-control" required type="text" name="title" id="" value="{{ $event['title'] }}">
-                    
-                    <h2>Description</h2>
-                    <input class="form-control" required type="text" name="desc" value="{{ $event['description'] }}" >
-                    <h2>Instagram</h2>
-                    <input class="form-control" required type="text" name="ig" value="{{ $event['instagram'] }}">
+                    <h3>Title</h3>
+                    <input class="form-control mb-1" required type="text" name="title" id="" value="{{ $event['title'] }}">
+                    <h3>Description</h3>
+                    <input class="form-control mb-1" required type="text" name="desc" value="{{ $event['description'] }}" >
+                    <h3>Instagram Link</h3>
+                    <input class="form-control mb-1" required type="text" name="ig" value="{{ $event['instagram_link'] }}">
+                    <h3>Instagram Username</h3>
+                    <input class="form-control mb-1" required type="text" name="ig_username" value="{{ $event['instagram_username'] }}">
                     
                     <input class="mt-3 btn btn-primary" type="submit" value="Update">
                 </form>

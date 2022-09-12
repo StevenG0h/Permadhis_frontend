@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\events;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rules\File;
 
 use function PHPUnit\Framework\isNull;
 
@@ -23,21 +24,20 @@ class adminUpdate extends Controller
         $desc = $request->input('desc');
         $ig = $request->input('ig');
         $event = $event::find($id);
-            if (!empty($title)) {
-                if (!empty($desc)) {
-                    if(!empty($ig)){
-                        $oldTitle = $event->title;
-                        $event->title = $title;
-                        $event->description = $desc;
-                        $event->instagram = $ig;
-                        $event->save();
-                        Storage::move($oldTitle,$title);
-                        return redirect('/admin');
-                    }
-                }
-            }else{
-                return back();
-            }
+        $request->validate([
+            'title' => 'required',
+            'desc' =>'required',
+            'ig' => 'required',
+            'ig_username'=>'required'
+        ]);
+        $oldTitle = $event->title;
+        $event->title = $title;
+        $event->description = $desc;
+        $event->instagram_username = $request->ig_username;
+        $event->instagram_link = $request->ig;
+        $event->save();
+        Storage::move($oldTitle,$title);
+        return redirect('/admin');
     }
     protected function updateImage(Request $request,$id){   
         for ($i=0; $i < count($request['image']); $i++) { 
@@ -46,6 +46,11 @@ class adminUpdate extends Controller
         return back();
     }
     protected function updateLogo(Request $request,$title){   
+        $request->validate([
+            'logo'=>[
+                'required',File::types(['jpg','jpeg','png','pdf'])->max(1024 * 300)
+            ],
+        ]);
         Storage::delete($request['oldLogo']);
         $logo = $request->file('logo');
         $logo->storeAs($title.'/logo/', $logo->getClientOriginalName());
@@ -54,6 +59,11 @@ class adminUpdate extends Controller
     protected function uploadImage(Request $request,$title){
         $images = $request->file('image');
         $imageInStorage = count($this->getImage($title."/images"));
+        $request->validate([
+            'images.*'=>[
+                'required',File::types(['jpg','jpeg','png','pdf'])->max(1024 * 300)
+            ],
+        ]);
         if ($imageInStorage != 5) {
             $imageLimit =  5 - $imageInStorage;
             if ($imageLimit > count($images)) {

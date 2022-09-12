@@ -19,7 +19,7 @@ class LandingController extends Controller
             $event['logo'] = $logo[$i];
             $i++;
         }
-        return view('Landing')->with('data',$events);   
+        return view('Landing')->with(['data'=>$events]);   
     }
     private function showEvents(){
         $eventObj = new events();

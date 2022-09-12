@@ -19,7 +19,8 @@ return new class extends Migration
             $table->timestamp('updated_at')->nullable();
             $table->string('title');
             $table->string('description');
-            $table->string('instagram');
+            $table->string('instagram_link');
+            $table->string('instagram_username');
             $table->timestamp('deleted_at')->nullable();
         });
     }
